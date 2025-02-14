@@ -9,7 +9,7 @@ export interface IUser {
   forgotPasswordTokenExpiry: Date | undefined;
   verifyToken: string | undefined;
   verifyTokenExpiry: Date | undefined;
-} 
+}
 
 const userSchema = new mongoose.Schema<IUser>({
   username: {
@@ -41,6 +41,6 @@ const userSchema = new mongoose.Schema<IUser>({
 });
 
 const User: Model<IUser> =
-  // if mongoose.models.users exists, use it otherwise create one   
+  // if mongoose.models.users exists, use it otherwise create one
   mongoose.models.users || mongoose.model("users", userSchema);
 export default User;
